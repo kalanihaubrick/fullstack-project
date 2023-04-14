@@ -1,0 +1,24 @@
+<div class="container my-5">
+    <h1 class="mb-3">Despesas</h1>
+
+    <table class="table" *ngIf="despesas && despesas.length > 0">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let despesas of despesas">
+                <td>{{ despesas.descricao}}</td>
+                <td>R$ {{ despesas.valor}}</td>
+                <td>{{ despesas.data}}</td>
+                <td>{{ despesas.categoria}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!despesas || despesas.length <= 0">Nenhuma receita cadastrada</p>
+</div>
