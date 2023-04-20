@@ -1,5 +1,5 @@
 export interface Receitas {
-    id: number;
+    id: string;
     descricao: string;
     valor: number;
     data: string;    

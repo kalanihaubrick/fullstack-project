@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReceitasService } from 'src/app/Services/receitas/receitas.service';
 import { Receitas } from 'src/app/models/receitas.model';
 
 @Component({
@@ -7,23 +8,20 @@ import { Receitas } from 'src/app/models/receitas.model';
   styleUrls: ['./receitas-list.component.css']
 })
 export class ReceitasListComponent implements OnInit {
-  receitas: Receitas[] = [
-    {
-      id: 1,
-    descricao: 'Salario',
-    valor: 4090,
-    data: '2023-04-01'   
-    },
-    {
-      id: 2,
-    descricao: 'Venda Moto',
-    valor: 10000,
-    data: '2023-04-13'   
-    }
-  ];
+  receitas: Receitas[] = [];
 
-  constructor() { }
+  constructor(private receitasServices: ReceitasService) { }
 
   ngOnInit(): void {
+    this.receitasServices.pegarTodasReceitas()
+    .subscribe({
+      next: (receitas) => {
+        this.receitas = receitas;
+      },
+      error: (response) => {
+        console.log(response);
+      }
+      
+    });
   }
 }

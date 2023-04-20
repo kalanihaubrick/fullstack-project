@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DespesasService } from 'src/app/Services/despesas/despesas.service';
 import { Despesas } from 'src/app/models/despesas.model';
 
 @Component({
@@ -7,33 +8,19 @@ import { Despesas } from 'src/app/models/despesas.model';
   styleUrls: ['./despesas-list.component.css']
 })
 export class DespesasListComponent implements OnInit {
-  despesas: Despesas[] = [
-    {
-      id: 1,
-      descricao: 'Mercado',
-      valor: 650,
-      data: '2023-04-01',
-      categoria: 'Alimentação'
-    },
-    {
-      id: 2,
-      descricao: 'Luz',
-      valor: 250.37,
-      data: '2023-04-03',
-      categoria: 'Moradia'
-    },
-    {
-      id: 3,
-      descricao: 'Gasolina',
-      valor: 200,
-      data: '2023-04-10',
-      categoria: 'Transporte'
-    },
-  ]
-  constructor() { }
+  despesas: Despesas[] = []
+  constructor(private despesasServices: DespesasService) { }
 
   ngOnInit(): void {
-    this.despesas.push()
+    this.despesasServices.pegarTodasDespesas()
+    .subscribe({
+      next: (despesas) => {
+        this.despesas = despesas;
+      },
+      error: (response) => {
+        console.log(response);
+      }
+    }) 
   }
 
 }
