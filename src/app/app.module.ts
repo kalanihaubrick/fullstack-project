@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddReceitaComponent } from './components/receitas/add-receita/add-receita.component';
 import { AddDespesasComponent } from './components/despesas/add-despesas/add-despesas.component';
 import { FormsModule } from '@angular/forms';
+import { EditReceitaComponent } from './components/receitas/edit-receita/edit-receita.component';
+import { EditDespesaComponent } from './components/despesas/edit-despesa/edit-despesa.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { FormsModule } from '@angular/forms';
     DespesasListComponent,
     AddReceitaComponent,
     AddDespesasComponent,
+    EditReceitaComponent,
+    EditDespesaComponent,
   ],
   imports: [
     BrowserModule,

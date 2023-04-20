@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ReceitasService } from 'src/app/Services/receitas/receitas.service';
 import { Receitas } from 'src/app/models/receitas.model';
 
@@ -15,7 +16,7 @@ export class AddReceitaComponent implements OnInit {
     data: ''
   };
 
-  constructor(private receitasService: ReceitasService) {}
+  constructor(private receitasService: ReceitasService, private router: Router) {}
 
   ngOnInit(): void {
       
@@ -25,7 +26,7 @@ export class AddReceitaComponent implements OnInit {
     this.receitasService.addReceita(this.addReceitaRequest)
     .subscribe({
       next: (receita) => {
-        console.log(receita);
+       this.router.navigate(['receitas'])
       },
       error: (reponse) => {
         console.log(reponse);
