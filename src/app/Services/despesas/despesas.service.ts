@@ -19,4 +19,8 @@ baseApiUrl: string = environment.baseApiUrl
     addDespesaRequest.id = '00000000-0000-0000-0000-000000000000';
     return this.http.post<Despesas>(this.baseApiUrl + '/api/despesas', addDespesaRequest)
   }
+
+  pegarDespesa(id: String): Observable<Despesas> {
+    return this.http.get<Despesas>(this.baseApiUrl + '/api/Despesas/' + id)
+  }
 }

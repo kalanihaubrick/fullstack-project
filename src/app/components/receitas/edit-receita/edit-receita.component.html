@@ -1,1 +1,34 @@
-<p>edit-receita works!</p>
+<div class="container my-5">
+
+    <h1 class="mb-3">Editar Receita</h1>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-3">
+                <form #form="ngForm">
+                    <div class="mb-3">
+                        <label for="id" class="form-label">Id</label>
+                        <input type="text" class="form-control" id="id" readonly name="id"
+                            [(ngModel)]="receitaDetalhes.id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="descricao" class="form-label">Descrição</label>
+                        <input type="text" class="form-control" id="descricao" name="descricao"
+                            [(ngModel)]="receitaDetalhes.descricao">
+                    </div>
+                    <div class="mb-3">
+                        <label for="valor" class="form-label">Valor</label>
+                        <input type="text" class="form-control" id="valor" name="valor"
+                            [(ngModel)]="receitaDetalhes.valor">
+                    </div>
+                    <div class="mb-3">
+                        <label for="data" class="form-label">Data</label>
+                        <input type="text" class="form-control" id="data" name="data"
+                            [(ngModel)]="receitaDetalhes.data">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

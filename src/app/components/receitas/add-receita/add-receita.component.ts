@@ -25,7 +25,7 @@ export class AddReceitaComponent implements OnInit {
   addReceita() {
     this.receitasService.addReceita(this.addReceitaRequest)
     .subscribe({
-      next: (receita) => {
+      next: () => {
        this.router.navigate(['receitas'])
       },
       error: (reponse) => {

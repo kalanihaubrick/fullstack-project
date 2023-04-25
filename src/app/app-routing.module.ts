@@ -4,6 +4,8 @@ import { ReceitasListComponent } from './components/receitas/receitas-list/recei
 import { DespesasListComponent } from './components/despesas/despesas-list/despesas-list.component';
 import { AddReceitaComponent } from './components/receitas/add-receita/add-receita.component';
 import { AddDespesasComponent } from './components/despesas/add-despesas/add-despesas.component';
+import { EditReceitaComponent } from './components/receitas/edit-receita/edit-receita.component';
+import { EditDespesaComponent } from './components/despesas/edit-despesa/edit-despesa.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path: 'despesas/criar',
     component: AddDespesasComponent
+  },
+  {
+    path: 'receitas/edit/:id',
+    component: EditReceitaComponent
+  },
+  {
+    path: 'despesas/edit/:id',
+    component: EditDespesaComponent
   }
 ];
 

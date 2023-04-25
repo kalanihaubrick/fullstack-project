@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DespesasService } from 'src/app/Services/despesas/despesas.service';
 import { Despesas } from 'src/app/models/despesas.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-despesas',
@@ -16,7 +17,7 @@ export class AddDespesasComponent implements OnInit {
     categoria: ''
   };
 
-  constructor(private despesasService: DespesasService) {}
+  constructor(private despesasService: DespesasService, private router: Router) {}
 
   ngOnInit(): void {
       
@@ -25,8 +26,8 @@ export class AddDespesasComponent implements OnInit {
   addDespesa(){
     this.despesasService.addDespesa(this.addDespesaRequest)
     .subscribe({
-      next: (despesa) => {
-        console.log(despesa)
+      next: () => {
+       this.router.navigate(['despesas'])
       },
       error: (response) => {
         console.log(response)

@@ -1,1 +1,48 @@
-<p>edit-despesa works!</p>
+<div class="container my-5">
+    <h1 class="mb-3">Editar Despesa</h1>
+
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm">
+                <div class="mb-3">
+                    <label for="Id" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="Id" readonly name="Id" [(ngModel)]="despesaDetalhe.id">
+
+                </div>
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <input type="text" class="form-control" id="descricao" name="descricao"
+                        [(ngModel)]="despesaDetalhe.descricao">
+
+                </div>
+                <div class="mb-3">
+                    <label for="valor" class="form-label">Valor</label>
+                    <input type="number" step="0.01" name="valor" class="form-control" id="valor" name="valor"
+                        [(ngModel)]="despesaDetalhe.valor">
+
+                </div>
+                <div class="mb-3">
+                    <label for="data" class="form-label">Data</label>
+                    <input type="date" class="form-control" id="data" name="data" [(ngModel)]="despesaDetalhe.data">
+
+                </div>
+                <div class="mb-3">
+                    <label for="categoria" class="form-label">Categoria</label>
+                    <select name="categoria" class="form-control" id="categoria" name="categoria"
+                        [(ngModel)]="despesaDetalhe.categoria">
+
+                        <option value="outros">Outros</option>
+                        <option value="moradia">Moraria</option>
+                        <option value="lazer">Lazer</option>
+                        <option value="saude">Saúde</option>
+                        <option value="alimentacao">Alimentação</option>
+                        <option value="transporte">Transporte</option>
+                        <option value="imprevisto">Imprevisto</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+</div>

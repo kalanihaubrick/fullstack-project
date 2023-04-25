@@ -8,6 +8,7 @@
                 <th>Valor</th>
                 <th>Data</th>
                 <th>Categoria</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +17,7 @@
                 <td>R$ {{ despesas.valor}}</td>
                 <td>{{ despesas.data}}</td>
                 <td>{{ despesas.categoria}}</td>
+                <td> <a [routerLink]="['/despesas', 'edit', despesas.id]">Editar</a></td>
 
             </tr>
         </tbody>

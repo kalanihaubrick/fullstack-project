@@ -22,4 +22,8 @@ export class ReceitasService {
     addReceitaRequest.id = '00000000-0000-0000-0000-000000000000';
     return this.http.post<Receitas>(this.baseApiUrl + '/api/Receitas', addReceitaRequest)
   }
+
+  pegarReceita(id: string): Observable<Receitas> {
+    return this.http.get<Receitas>(this.baseApiUrl + '/api/Receitas/' + id)
+  }
 }

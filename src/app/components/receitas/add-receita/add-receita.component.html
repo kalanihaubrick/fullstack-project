@@ -6,22 +6,20 @@
             <form #form="ngForm" (ngSubmit)="addReceita()">
                 <div class="mb-3">
                     <label for="descricao" class="form-label">Descrição</label>
-                    <input type="text" class="form-control" id="descricao"
-                    name="descricao" [(ngModel)]="addReceitaRequest.descricao">
+                    <input type="text" class="form-control" id="descricao" name="descricao"
+                        [(ngModel)]="addReceitaRequest.descricao">
                 </div>
                 <div class="mb-3">
                     <label for="valor" class="form-label">Valor</label>
-                    <input type="number" step="0.01" name="valor" class="form-control" id="valor"
-                    name="valor" [(ngModel)]="addReceitaRequest.valor">
+                    <input type="number" step="0.01" name="valor" class="form-control" id="valor" name="valor"
+                        [(ngModel)]="addReceitaRequest.valor">
                 </div>
                 <div class="mb-3">
                     <label for="data" class="form-label">Data</label>
-                    <input type="date" class="form-control" id="data"
-                    name="data" [(ngModel)]="addReceitaRequest.data">
+                    <input type="date" class="form-control" id="data" name="data" [(ngModel)]="addReceitaRequest.data">
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
     </div>
-
 </div>
