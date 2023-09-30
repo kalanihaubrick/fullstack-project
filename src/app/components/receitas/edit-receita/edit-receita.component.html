@@ -8,8 +8,8 @@
                 <form #form="ngForm">
                     <div class="mb-3">
                         <label for="id" class="form-label">Id</label>
-                        <input type="text" class="form-control" id="id" readonly name="id"
-                            [(ngModel)]="receitaDetalhes.id">
+                        <input type="text" class="form-control disable" id="id" readonly name="id"
+                            [(ngModel)]="receitaDetalhes.id" disabled="true">
                     </div>
                     <div class="mb-3">
                         <label for="descricao" class="form-label">Descrição</label>

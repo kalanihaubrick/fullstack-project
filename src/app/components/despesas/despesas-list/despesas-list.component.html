@@ -17,7 +17,7 @@
                 <td>R$ {{ despesas.valor}}</td>
                 <td>{{ despesas.data}}</td>
                 <td>{{ despesas.categoria}}</td>
-                <td> <a [routerLink]="['/despesas', 'edit', despesas.id]">Editar</a></td>
+                <td> <button type="button" class="btn btn-light" [routerLink]="['/despesas', 'edit', despesas.id]">Editar</button></td>
 
             </tr>
         </tbody>

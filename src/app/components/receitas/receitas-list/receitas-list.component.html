@@ -15,7 +15,7 @@
                 <td>{{ receitas.descricao}}</td>
                 <td>R$ {{ receitas.valor}}</td>
                 <td>{{ receitas.data}}</td>
-                <td><a [routerLink]="['/receitas', 'edit', receitas.id]">Editar</a></td>
+                <td><button type="button" class="btn btn-light" [routerLink]="['/receitas', 'edit', receitas.id]">Editar</button></td>
 
             </tr>
         </tbody>
