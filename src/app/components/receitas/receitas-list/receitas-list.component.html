@@ -11,11 +11,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let receitas of receitas">
-                <td>{{ receitas.descricao}}</td>
-                <td>R$ {{ receitas.valor}}</td>
-                <td>{{ receitas.data}}</td>
-                <td><button type="button" class="btn btn-light" [routerLink]="['/receitas', 'edit', receitas.id]">Editar</button></td>
+            <tr *ngFor="let receitaItem of receitas">
+                <td>{{ receitaItem.descricao}}</td>
+                <td>R$ {{ receitaItem.valor}}</td>
+                <td>{{receitaItem.data | date: 'dd-MM-yyyy'}}</td>
+                <td><button type="button" class="btn btn-secondary"
+                        [routerLink]="['/receitas', 'edit', receitaItem.id]">Editar</button></td>
 
             </tr>
         </tbody>

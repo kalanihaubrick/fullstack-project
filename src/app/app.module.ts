@@ -11,6 +11,8 @@ import { AddDespesasComponent } from './components/despesas/add-despesas/add-des
 import { FormsModule } from '@angular/forms';
 import { EditReceitaComponent } from './components/receitas/edit-receita/edit-receita.component';
 import { EditDespesaComponent } from './components/despesas/edit-despesa/edit-despesa.component';
+import { FindDespesasComponent } from './components/despesas/find-despesas/find-despesas.component';
+import { FindReceitasComponent } from './components/receitas/find-receitas/find-receitas.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { EditDespesaComponent } from './components/despesas/edit-despesa/edit-de
     AddDespesasComponent,
     EditReceitaComponent,
     EditDespesaComponent,
+    FindDespesasComponent,
+    FindReceitasComponent,
   ],
   imports: [
     BrowserModule,

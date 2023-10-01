@@ -9,19 +9,17 @@ import { Receitas } from 'src/app/models/receitas.model';
 })
 export class ReceitasListComponent implements OnInit {
   receitas: Receitas[] = [];
-
   constructor(private receitasServices: ReceitasService) { }
 
   ngOnInit(): void {
     this.receitasServices.pegarTodasReceitas()
-    .subscribe({
-      next: (receitas) => {
-        this.receitas = receitas;
-      },
-      error: (response) => {
-        console.log(response);
-      }
-      
-    });
+      .subscribe({
+        next: (receitas) => {
+          this.receitas = receitas;
+        },
+        error: (response) => {
+          console.log(response);
+        }
+      });
   }
 }

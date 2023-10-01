@@ -15,12 +15,13 @@
             <tr *ngFor="let despesas of despesas">
                 <td>{{ despesas.descricao}}</td>
                 <td>R$ {{ despesas.valor}}</td>
-                <td>{{ despesas.data}}</td>
+                <td>{{despesas.data | date: 'dd-MM-yyyy'}}</td>
                 <td>{{ despesas.categoria}}</td>
-                <td> <button type="button" class="btn btn-light" [routerLink]="['/despesas', 'edit', despesas.id]">Editar</button></td>
+                <td> <button type="button" class="btn btn-secondary"
+                        [routerLink]="['/despesas', 'edit', despesas.id]">Editar</button></td>
 
             </tr>
         </tbody>
     </table>
-    <p *ngIf="!despesas || despesas.length <= 0">Nenhuma receita cadastrada</p>
+    <p *ngIf="!despesas || despesas.length <= 0">Nenhuma despesa cadastrada</p>
 </div>

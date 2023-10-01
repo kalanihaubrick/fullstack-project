@@ -13,14 +13,13 @@ export class DespesasListComponent implements OnInit {
 
   ngOnInit(): void {
     this.despesasServices.pegarTodasDespesas()
-    .subscribe({
-      next: (despesas) => {
-        this.despesas = despesas;
-      },
-      error: (response) => {
-        console.log(response);
-      }
-    }) 
+      .subscribe({
+        next: (despesas) => {
+          this.despesas = despesas;
+        },
+        error: (response) => {
+          console.log(response);
+        }
+      });
   }
-
 }
